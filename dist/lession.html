@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>论文 Agent 使用教程</title>
+    <style>
+        /* ===== 全局重置 & 基础 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f5f7fb;
+            color: #1e293b;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
+            padding: 50px 55px;
+        }
+
+        /* ===== 头部 ===== */
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 2px solid #f1f4f9;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(145deg, #1a2a6c, #4a90d9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .header .subtitle span {
+            background: #eef2ff;
+            color: #4a6cf7;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* ===== 步骤卡片 ===== */
+        .step {
+            margin-bottom: 44px;
+            padding-left: 8px;
+        }
+
+        .step:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(145deg, #1a2a6c, #2d4a9e);
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(26, 42, 108, 0.20);
+        }
+
+        .step-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0f172a;
+            letter-spacing: -0.3px;
+        }
+
+        .step-desc {
+            color: #334155;
+            font-size: 15px;
+            margin-bottom: 18px;
+            padding-left: 54px;
+        }
+
+        .step-desc strong {
+            color: #1a2a6c;
+            font-weight: 600;
+        }
+
+        /* ===== 子步骤 ===== */
+        .sub-step {
+            margin-top: 22px;
+            padding-left: 54px;
+        }
+
+        .sub-step-label {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .sub-step-label .badge {
+            display: inline-block;
+            background: #eef2ff;
+            color: #4a6cf7;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 0 10px;
+            border-radius: 12px;
+            line-height: 22px;
+        }
+
+        .sub-step p {
+            color: #475569;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .sub-step .code-inline {
+            background: #f1f5f9;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+            font-size: 14px;
+            color: #0f172a;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* ===== 图片 ===== */
+        .figure-wrap {
+            margin: 14px 0 6px 0;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f8fafc;
+            border: 1px solid #e9edf4;
+            transition: box-shadow 0.2s;
+        }
+
+        .figure-wrap:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .figure-wrap img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #f1f4f9;
+        }
+
+        .figure-caption {
+            padding: 10px 18px 12px 18px;
+            font-size: 14px;
+            color: #475569;
+            background: #fafbfc;
+            border-top: 1px solid #e9edf4;
+            font-weight: 400;
+        }
+
+        .figure-caption .hint {
+            color: #94a3b8;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        /* ===== 步骤5 特殊样式 ===== */
+        .feature-list {
+            margin-top: 10px;
+            padding-left: 54px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+        }
+
+        .feature-list .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f1f4f9;
+            padding: 6px 16px 6px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-list .tag::before {
+            content: "✓";
+            color: #4a6cf7;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .notice-box {
+            margin-top: 18px;
+            padding: 16px 22px;
+            background: #f0f7ff;
+            border-left: 5px solid #4a6cf7;
+            border-radius: 10px;
+            font-size: 15px;
+            color: #1e293b;
+            margin-left: 54px;
+        }
+
+        .notice-box strong {
+            color: #1a2a6c;
+        }
+
+        /* ===== 链接 ===== */
+        a {
+            color: #4a6cf7;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+            font-weight: 500;
+        }
+
+        a:hover {
+            border-bottom-color: #4a6cf7;
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #e9edf4;
+            text-align: center;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 700px) {
+            .container {
+                padding: 28px 18px;
+                border-radius: 16px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .step-title {
+                font-size: 19px;
+            }
+
+            .step-desc,
+            .sub-step {
+                padding-left: 0;
+            }
+
+            .sub-step {
+                margin-top: 18px;
+            }
+
+            .step-number {
+                width: 34px;
+                height: 34px;
+                font-size: 16px;
+            }
+
+            .step-header {
+                gap: 10px;
+            }
+
+            .feature-list {
+                padding-left: 0;
+            }
+
+            .notice-box {
+                margin-left: 0;
+            }
+
+            .figure-caption {
+                font-size: 13px;
+                padding: 8px 14px 10px 14px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            body {
+                padding: 16px 8px;
+            }
+            .container {
+                padding: 20px 12px;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            .step-title {
+                font-size: 17px;
+            }
+            .step-number {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ==================== 头部 ==================== -->
+        <header class="header">
+            <h1>📄 论文 Agent 使用教程</h1>
+            <p class="subtitle">
+                从 <span>API Key 申请</span> 到 <span>生成全文</span>，手把手带你完成配置
+            </p>
+        </header>
+
+        <!-- ==================== 步骤 1 ==================== -->
+        <section class="step">
+            <div class="step-header">
+                <span class="step-number">1</span>
+                <h2 class="step-title">申请智谱 API Key</h2>
+            </div>
+            <p class="step-desc">
+                智谱开放平台提供免费的 API Key，用于调用大模型能力。
+                <strong>没有这个 Key，整个系统无法运作。</strong>
+            </p>
+
+            <!-- 1.1 -->
+            <div class="sub-step">
+                <div class="sub-step-label">
+                    <span>1.1 登录 / 注册</span>
+                    <span class="badge">必做</span>
+                </div>
+                <p>
+                    访问 <a href="https://open.bigmodel.cn/login?redirect=%2Fconsole%2Foverview" target="_blank" rel="noopener">智谱开放平台</a>，
+                    使用手机号或邮箱完成登录 / 注册。
+                </p>
+                <div class="figure-wrap">
+                    <img src="./images/a-zhipu-bigmodel-home.png" alt="智谱开放平台控制台首页" loading="lazy" />
+                    <div class="figure-caption">
+                        登录后进入控制台概览页
+                        <span class="hint">· 图示为平台界面参考</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.2 -->
+            <div class="sub-step">
+                <div class="sub-step-label">
+                    <span>1.2 进入 API Key 管理</span>
+                    <span class="badge">必做</span>
+                </div>
+                <p>
+                    点击左侧菜单中的 <strong>「API Key」</strong>，进入
+                    <a href="https://open.bigmodel.cn/apikey/platform" target="_blank" rel="noopener">API Key 管理页面</a>。
+                </p>
+                <div class="figure-wrap">
+                    <img src="./images/a-zhipu-bigmodel-create-api-key.png" alt="API Key 管理页面" loading="lazy" />
+                    <div class="figure-caption">
+                        左侧菜单 → API Key
+                        <span class="hint">· 点击进入管理页</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.3 -->
+            <div class="sub-step">
+                <div class="sub-step-label">
+                    <span>1.3 创建新的 API Key</span>
+                    <span class="badge">必做</span>
+                </div>
+                <p>
+                    点击左上角的 <strong>「新建 API Key」</strong>，在弹出框中任意输入一个名称（如 <code class="code-inline">my-agent</code>），点击确认。
+                </p>
+                <div class="figure-wrap">
+                    <img src="./images/a-zhipu-bigmodel-new-name.png" alt="新建 API Key 弹窗" loading="lazy" />
+                    <div class="figure-caption">
+                        输入名称后点击确认
+                        <span class="hint">· 名称仅用于标识</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.4 -->
+            <div class="sub-step">
+                <div class="sub-step-label">
+                    <span>1.4 复制 API Key</span>
+                    <span class="badge">重要</span>
+                </div>
+                <p>
+                    创建成功后，将鼠标悬停到新生成的 Key 上，点击右侧的 <strong>复制图标</strong>。
+                    请妥善保存，<strong>后续配置需要用到</strong>。
+                </p>
+                <div class="figure-wrap">
+                    <img src="./images/a-zhipu-bigmodel-new-copy.png" alt="复制 API Key" loading="lazy" />
+                    <div class="figure-caption">
+                        悬停 → 点击复制按钮
+                        <span class="hint">· 复制后保存备用</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 步骤 2 ==================== -->
+        <section class="step">
+            <div class="step-header">
+                <span class="step-number">2</span>
+                <h2 class="step-title">从环境变量里面获取网页系统登录密钥</h2>
+            </div>
+            <p class="step-desc">
+                <!-- 将刚才复制的 API Key 填入项目的环境变量文件中，让系统能够识别。 -->
+            </p>
+
+            <!-- 2.1 -->
+            <div class="sub-step">
+                <div class="sub-step-label">
+                    <span>2.1 打开 <code class="code-inline">.env</code> 文件</span>
+                    <span class="badge">必做</span>
+                </div>
+                <p>
+                    在项目根目录找到 <code class="code-inline">.env</code> 文件（若没有则新建）。
+                </p>
+                <div class="figure-wrap">
+                    <img src="./images/a-zhipu-bigmodel-open-evn.png" alt="打开 .env 文件" loading="lazy" />
+                    <div class="figure-caption">
+                        项目根目录下的 <code class="code-inline">.env</code> 文件
+                        <span class="hint">· 注意文件名以点开头</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.2 -->
+            <div class="sub-step">
+                <div class="sub-step-label">
+                    <span>2.2 复制 <code class="code-inline">ADMIN_SECRET_KEY</code></span>
+                    <span class="badge">关键</span>
+                </div>
+                <p>
+                    在 <code class="code-inline">.env</code> 中找到 <code class="code-inline">ADMIN_SECRET_KEY=</code>，
+                    将 <strong>等于号后面的内容复制</strong>，准备在登录系统的时候输入 。
+                </p>
+                <!-- <div style="background:#f1f5f9; padding:12px 18px; border-radius:10px; font-family:monospace; font-size:14px; color:#0f172a; margin-top:4px; border:1px solid #e2e8f0; overflow-x:auto;">
+                    ADMIN_SECRET_KEY = 你的智谱API Key
+                </div>
+                <p style="margin-top:10px; color:#475569; font-size:14px;">
+                    ⚠️ 保存文件后，重启服务使配置生效。
+                </p> -->
+            </div>
+        </section>
+
+        <!-- ==================== 步骤 3 ==================== -->
+        <section class="step">
+            <div class="step-header">
+                <span class="step-number">3</span>
+                <h2 class="step-title">登录系统</h2>
+            </div>
+            <p class="step-desc">
+                在浏览器中访问本地服务地址，进入系统登录页。
+            </p>
+
+            <div class="sub-step">
+                <div class="sub-step-label">
+                    <span>访问 <code class="code-inline">http://localhost:3000</code></span>
+                    <span class="badge">本地</span>
+                </div>
+                <p>
+                    打开浏览器，输入 <code class="code-inline">http://localhost:3000/</code> 进入系统主页。
+                    如果服务已启动，你会看到登录界面。
+                </p>
+                <p>然后将前面复制的密钥粘贴进去，点击登录</p>
+                <div class="figure-wrap">
+                    <img src="./images/a-zhipu-bigmodel-need-login.png" alt="系统登录页面" loading="lazy" />
+                    <div class="figure-caption">
+                        系统登录页
+                        <!-- <span class="hint">· 需要先配置 API Key</span> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 步骤 4 ==================== -->
+        <section class="step">
+            <div class="step-header">
+                <span class="step-number">4</span>
+                <h2 class="step-title">配置系统</h2>
+            </div>
+            <p class="step-desc">
+                进入系统后，将智谱 API Key 填入配置项并测试连通性。
+            </p>
+
+            <!-- 4.1 -->
+            <div class="sub-step">
+                <div class="sub-step-label">
+                    <span>4.1 点击配置图标</span>
+                    <span class="badge">必做</span>
+                </div>
+                <p>
+                    进入系统主页后，点击右上角的 <strong>⚙️ 配置图标</strong>，打开配置弹窗。
+                </p>
+                <div class="figure-wrap">
+                    <img src="./images/a-zhipu-bigmodel-click-peizhi.png" alt="点击配置图标" loading="lazy" />
+                    <div class="figure-caption">
+                        右上角配置图标
+                        <span class="hint">· 点击打开配置面板</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4.2 -->
+            <div class="sub-step">
+                <div class="sub-step-label">
+                    <span>4.2 粘贴 Key 并测试</span>
+                    <span class="badge">关键</span>
+                </div>
+                <p>
+                    在弹出框中将智谱 API Key 粘贴到对应输入框，然后点击 <strong>「测试」</strong> 按钮。
+                    若提示成功，说明配置无误。
+                </p>
+                <div class="figure-wrap">
+                    <img src="./images/a-zhipu-bigmodel-test-key.png" alt="测试 API Key" loading="lazy" />
+                    <div class="figure-caption">
+                        粘贴 Key → 点击测试
+                        <span class="hint">· 测试通过后即可开始使用</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 步骤 5 ==================== -->
+        <section class="step">
+            <div class="step-header">
+                <span class="step-number">5</span>
+                <h2 class="step-title">开始使用</h2>
+            </div>
+            <p class="step-desc">
+                配置完成后，你就可以使用论文 Agent 辅助写作了。核心流程如下：
+            </p>
+
+            <div class="feature-list">
+                <span class="tag">📝 输入论文标题</span>
+                <span class="tag">🤖 AI 生成大纲</span>
+                <span class="tag">✏️ 手动编辑大纲（可选）</span>
+                <span class="tag">📄 点击「生成全文」</span>
+                <span class="tag">📊 支持标注生成表格</span>
+            </div>
+
+            <div class="notice-box">
+                <strong>💡 小贴士：</strong>
+                你可以让 AI 自动生成大纲，也可以手动将大纲复制到下方编辑区（需先点击「转换」），
+                之后点击「生成全文」即可。系统已内置了 <strong>标注生成表格</strong> 的功能，在需要表格的地方用特定标记即可自动生成。
+            </div>
+        </section>
+
+        <!-- ==================== 页脚 ==================== -->
+        <footer class="footer">
+            <p>智谱开放平台 · 论文 Agent 使用教程 &nbsp;|&nbsp; 如有问题请检查 API Key 是否有效</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
