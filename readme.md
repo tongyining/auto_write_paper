@@ -151,5 +151,5 @@ Happy Writing! 🎓
 
 ![加微信](./dist/images/qrcode.jpg)
 
-
+<img src="./dist/images/qrcode.jpg" alt="加微信" width="300" height="300" />
 
