@@ -1,0 +1,314 @@
+[
+  {
+    "id": "3548afc8-1da5-4e9f-b5ae-8479afa3ed94",
+    "title": "中小商业银行发展战略研究",
+    "degree": "correspondence",
+    "extraPrompt": null,
+    "userId": "user_mrouk20f_ivqc4mjd",
+    "status": "done",
+    "files": {
+      "domain": "3548afc8-1da5-4e9f-b5ae-8479afa3ed94_01_领域分析.md",
+      "literature": "3548afc8-1da5-4e9f-b5ae-8479afa3ed94_02_文献综述.md",
+      "titleResearch": "3548afc8-1da5-4e9f-b5ae-8479afa3ed94_03_标题研究.md",
+      "proposal": "3548afc8-1da5-4e9f-b5ae-8479afa3ed94_04_开题报告.md",
+      "thesis": "3548afc8-1da5-4e9f-b5ae-8479afa3ed94_06_正式论文.md"
+    },
+    "createdAt": "2026-07-17T11:48:50.564Z",
+    "error": null,
+    "outline": {
+      "title": "中小商业银行发展战略研究",
+      "chapters": [
+        {
+          "level": 1,
+          "title": "第一章 绪论",
+          "desc": "本章概述研究背景、研究目的、研究意义、文献综述和研究方法。",
+          "children": [
+            {
+              "level": 2,
+              "title": "一、研究背景",
+              "desc": "描述中小商业银行在国内外的发展现状及面临的挑战。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 中小商业银行的界定",
+                  "desc": "详细描述中小商业银行的定义、特点及其在金融体系中的作用。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 中小商业银行的发展现状",
+                  "desc": "分析中小商业银行在国内外的发展情况，包括市场份额、业务范围等。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "3 中小商业银行面临的挑战",
+                  "desc": "探讨中小商业银行在市场竞争、监管政策、金融科技等方面的挑战。",
+                  "features": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "title": "二、文献综述",
+              "desc": "总结国内外关于中小商业银行发展战略的研究成果。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 国外研究情况",
+                  "desc": "介绍国外学者对中小商业银行发展战略的研究成果。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 国内研究情况",
+                  "desc": "梳理国内学者对中小商业银行发展战略的研究成果。",
+                  "features": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "title": "三、研究目的和意义",
+              "desc": "阐述研究的具体目标和预期意义。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 研究目的",
+                  "desc": "明确研究的具体目标。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 研究意义",
+                  "desc": "分析研究的理论意义和实践价值。",
+                  "features": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "title": "四、研究方法",
+              "desc": "介绍本研究采用的研究方法。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 研究方法概述",
+                  "desc": "概述本研究采用的主要研究方法。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 数据来源",
+                  "desc": "说明数据来源及数据收集方法。",
+                  "features": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "title": "第二章 中小商业银行发展战略现状分析",
+          "desc": "本章分析中小商业银行发展战略的现状。",
+          "children": [
+            {
+              "level": 2,
+              "title": "一、中小商业银行的发展战略概述",
+              "desc": "概述中小商业银行的发展战略类型和特点。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 发展战略类型",
+                  "desc": "介绍中小商业银行的发展战略类型。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 发展战略特点",
+                  "desc": "分析中小商业银行发展战略的特点。",
+                  "features": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "title": "二、中小商业银行发展战略的实证分析",
+              "desc": "通过实证分析，探讨中小商业银行发展战略的实际效果。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 案例选择",
+                  "desc": "说明案例选择的标准和方法。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 案例分析",
+                  "desc": "对选择的案例进行深入分析。",
+                  "features": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "title": "第三章 中小商业银行发展战略问题剖析",
+          "desc": "本章剖析中小商业银行发展战略中存在的问题。",
+          "children": [
+            {
+              "level": 2,
+              "title": "一、中小商业银行发展战略存在的问题",
+              "desc": "分析中小商业银行发展战略中存在的问题。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 市场定位问题",
+                  "desc": "探讨中小商业银行的市场定位问题。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 产品和服务创新问题",
+                  "desc": "分析中小商业银行在产品和服务创新方面的问题。",
+                  "features": [
+                    "table"
+                  ]
+                },
+                {
+                  "level": 3,
+                  "title": "3 人才培养和激励机制问题",
+                  "desc": "探讨中小商业银行在人才培养和激励机制方面的问题。",
+                  "features": [
+                    "table"
+                  ]
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "title": "二、问题产生的原因分析",
+              "desc": "分析中小商业银行发展战略中存在的问题产生的原因。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 内部原因",
+                  "desc": "分析内部原因。",
+                  "features": [
+                    "table"
+                  ]
+                },
+                {
+                  "level": 3,
+                  "title": "2 外部原因",
+                  "desc": "分析外部原因。",
+                  "features": [
+                    "table"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "title": "第四章 中小商业银行发展战略解决方案",
+          "desc": "本章提出中小商业银行发展战略的解决方案。",
+          "children": [
+            {
+              "level": 2,
+              "title": "一、中小商业银行发展战略优化策略",
+              "desc": "提出中小商业银行发展战略的优化策略。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 市场定位优化",
+                  "desc": "提出市场定位优化的具体措施。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 产品和服务创新",
+                  "desc": "提出产品和服务创新的策略。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "3 人才培养和激励机制",
+                  "desc": "提出人才培养和激励机制的优化措施。",
+                  "features": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "title": "二、政策建议",
+              "desc": "针对中小商业银行发展战略提出政策建议。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 政府政策支持",
+                  "desc": "提出政府政策支持的措施。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 监管政策优化",
+                  "desc": "提出监管政策优化的建议。",
+                  "features": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "title": "第五章 结论",
+          "desc": "本章总结研究成果。",
+          "children": [
+            {
+              "level": 2,
+              "title": "一、研究结论",
+              "desc": "总结研究的主要结论。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 研究发现",
+                  "desc": "总结研究的主要发现。",
+                  "features": []
+                },
+                {
+                  "level": 3,
+                  "title": "2 研究贡献",
+                  "desc": "总结研究的贡献。",
+                  "features": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "title": "二、研究展望",
+              "desc": "对未来的研究方向进行展望。",
+              "children": [
+                {
+                  "level": 3,
+                  "title": "1 未来研究方向",
+                  "desc": "提出未来可能的研究方向。",
+                  "features": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "n1"
+    },
+    "feedContent": null,
+    "totalWords": 5000,
+    "completedAt": "2026-07-17 20:02:43",
+    "feedbacks": [
+      "3548afc8-1da5-4e9f-b5ae-8479afa3ed94_feedback_20260717_204938_896.md"
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "apiKey": "cdf0e67258ba4c7b8bcf08e52467428a.Cei5s6s1gD2xuXcX",
+  "apiUrl": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+  "model": "GLM-4-Flash",
+  "provider": "zhipu"
+}
