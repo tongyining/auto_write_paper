@@ -149,7 +149,5 @@ Happy Writing! 🎓
 
 ## 如何定制功能或者讨论workflow与agent开发和使用问题，请联系下方二维码（请备注GitHub agent）
 
-![加微信](./dist/images/qrcode.jpg)
-
 <img src="./dist/images/qrcode.jpg" alt="加微信" width="300" height="300" />
 
