@@ -19,7 +19,7 @@
 
 ## 🛠 技术栈
 
-- Node.js (v14+)
+- Node.js (v20)
 - Express
 - 智谱 AI API (GLM-4-Flash/GLM-4-Plus) 或兼容 OpenAI 格式的接口
 - 纯前端 HTML + CSS + JavaScript（无需构建工具）
@@ -30,14 +30,14 @@
 
 ### 前提条件
 
-- 安装 [Node.js](https://nodejs.org/)（建议 v16 或以上）
+- 安装 [Node.js](https://nodejs.org/)（建议 v20  更高版本涉及到uuid版本问题，v20使用8.3.0，nodejs如果版本更高，uuid也需要更高的版本）
 - 获取一个有效的 AI API Key（例如智谱 AI 的 `ZHIPUAI_API_KEY`）
 
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git https://github.com/tongyining/auto_write_paper.git
+cd auto_write_paper
 ```
 
 ### 2. 安装依赖
@@ -149,5 +149,5 @@ Happy Writing! 🎓
 
 ## 如何定制功能或者讨论workflow与agent开发和使用问题，请联系下方二维码（请备注GitHub agent）
 
-<img src="./dist/images/qrcode.jpg" alt="加微信" width="300" height="300" />
+<img src="./dist/images/qrcode.jpg" alt="加微信" width="200" height="200" />
 
